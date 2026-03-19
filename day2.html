@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Step-by-Step Guide to Setting Up Terraform, AWS CLI, and Your AWS Environment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 800px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>Day 2 Step-by-Step Guide to Setting Up Terraform, AWS CLI, and Your AWS Environment</h2>
+    <p>Today I read the book <strong>Terraform: Up &amp; Running</strong> by Yevgeniy Brikman — Chapter 2.</p>
+
+    <h3>Step 1: Create IAM User on AWS Console</h3>
+    <p>First, I created an IAM user on the AWS console with limited permissions and connected Terraform to this IAM user. The steps I followed:</p>
+    <ul>
+        <li>Open IAM services on my AWS account</li>
+        <li>Click <strong>Users</strong> → <strong>Create user</strong></li>
+        <li>Attach policies directly: <strong>AdministratorAccess</strong></li>
+        <li>Create user</li>
+        <li>Enable programmatic access:
+            <ul>
+                <li>Click on the username</li>
+                <li>Go to <strong>Security credentials</strong></li>
+                <li>Create Access Key</li>
+                <li>Choose <strong>Command line interface</strong></li>
+                <li>Create and save Access Key & Secret Key for use in VS Code</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>For Terraform to make changes in my AWS account, I set the AWS credentials for the IAM user I created earlier (<strong>Christ</strong>) as environment variables:</p>
+    <pre><code>export AWS_ACCESS_KEY_ID=(My IAM user access key id)
+export AWS_SECRET_ACCESS_KEY=(My IAM user secret access key)</code></pre>
+
+    <p><strong>Important Note:</strong> It is not a good practice to use the root user with Terraform. The root user has full privileges over the AWS account, and by mistake, it’s possible to delete all resources (S3, EC2, IAM…).</p>
+
+    <h3>Step 2: Install VS Code Extensions</h3>
+    <ul>
+        <li>HashiCorp Terraform</li>
+        <li>AWS Toolkit</li>
+    </ul>
+
+    <h3>Step 3: Verify Setup</h3>
+    <p>This chapter helped me verify everything is working correctly and deepen my understanding of how these tools connect. I ran the following commands and got clean outputs:</p>
+
+    <pre><code>$ terraform version
+Terraform v1.14.7
+on windows_amd64
++ provider registry.terraform.io/hashicorp/aws v6.37.0
+</code></pre>
+
+    <pre><code>$ aws --version
+aws-cli/2.24.22 Python/3.12.9 Windows/11 exe/AMD64
+</code></pre>
+
+    <pre><code>$ aws sts get-caller-identity
+{
+    "UserId": "AIDAY23MVWR22AGC5XXXX",
+    "Account": "60742891XXXX",
+    "Arn": "arn:aws:iam::60742891XXXX:user/Christ"
+}
+</code></pre>
+
+    <pre><code>$ aws configure list
+      Name                    Value             Type    Location
+      ----                    -----             ----    --------
+   profile                &lt;not set&gt;             None    None
+access_key     ****************7U2B shared-credentials-file
+secret_key     ****************BftB shared-credentials-file
+    region                us-east-1      config-file    ~/.aws/config
+</code></pre>
+
+    <p>Thank you!</p>
+    <p class="signature">Christelle Djike</p>
+</body>
+</html>
