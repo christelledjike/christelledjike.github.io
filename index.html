@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>What is Infrastructure as Code and Why It's Transforming DevOps</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background: #eee;
+      padding: 5px;
+      display: block;
+      margin: 10px 0;
+      white-space: pre-wrap;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="section">
+  
+  <p>I'm so excited to be part of this challenge, I'm very happy to put my knowledge in practice and improve it.</p>
+
+  <p>Today, I set up my environment, so my work will be smooth during the challenge.</p>
+
+  <ul>
+    <li>My AWS account was already created</li>
+    <li>I already had Terraform install on my machine, but it was an older version, so I had to update and install the latest version</li>
+    <li>My AWS CLI was already set up before the challenge</li>
+    <li>I already had Visual Studio Code install</li>
+  </ul>
+
+  <p>To verify all my installation, I run two commands:</p>
+
+  <code>
+terraform version et aws sts get-caller-identity
+
+Christelle Djike N@DESKTOP-5J39K3N MINGW64 ~/30_days_terraform/day1 (main)
+$ terraform version
+Terraform v1.14.7
+on windows_amd64
+
+Christelle Djike N@DESKTOP-5J39K3N MINGW64 ~/30_days_terraform/day1 (main)
+$ aws sts get-caller-identity
+{
+    "UserId": "AIDAY23MVWR22AGC5XXXX",
+    "Account": "60742891XXXX",
+    "Arn": "arn:aws:iam::60742891XXXX:user/Christ"
+}
+  </code>
+</div>
+
+<div class="section">
+  <p>I also read the Book, Terraform: Up & Running by Yevgeniy Brikman — Chapter 1. I learn some basics of Terraform.</p>
+</div>
+
+<div class="section">
+  <h2>What IaC is and the problem it solves?</h2>
+  <p>Infrastructure as Code (Iac) is a practice in IT where infrastructure like servers, networks, storage and databases is defined and managed using code instead of manual configuration. This practice helps It team automate tasks.</p>
+  <p>IaC solves many problems:</p>
+  <ul>
+    <li>Slow deployment: Manually creating infrastructure can takes many hours, slowing development, IaC can solves this by allowing fast and repeatable deployments.</li>
+    <li>Manual error: Mistakes can happen when setting up or changing servers.</li>
+    <li>Poor scalability: manual set up does not scale well for large systems</li>
+    <li>Inconsistent environment: Manuel configuration can lead some differences between environments.</li>
+  </ul>
+  <p>In conclusion, IaC makes infrastructure repeatable, manageable and consistent, It's also automate tasks.</p>
+</div>
+
+<div class="section">
+  <h2>The difference between declarative and imperative approaches:</h2>
+  <p>In Terraform, there are two main approaches:</p>
+  <ul>
+    <li>Imperative approach: this approach telling the system exactly how to do something, step by step. You also define the sequence of commands needed to achieve a desire result.</li>
+    <li>Declarative approach: this approach describe the desired end state and the system determines how to achieve it.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Why Terraform is worth learning?</h2>
+  <p>Learning Terraform is worth learning, for some reasons:</p>
+  <ul>
+    <li>It's one of the most popular tools.</li>
+    <li>It's automates tasks (creation, modification, destruction of resources) reducing manual work and human errors</li>
+    <li>IT's works with many cloud providers (AWS, Azure, GCP) allowing to manage infrastructure across multiple platforms with a single tool.</li>
+    <li>It's a declarative language</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Your personal goals for this 30-day challenge.</h2>
+  <p>For this 30 days challenge, I have many goals:</p>
+  <ul>
+    <li>Build a strong foundation in Terraform</li>
+    <li>Get Hands-On with Terraform by:</li>
+    <li>Writing real Terraform configurations</li>
+    <li>Deploying infrastructure in AWS</li>
+    <li>Testing and troubleshooting multiple servers</li>
+    <li>Publish my work, share my mistakes</li>
+    <li>Create a public learning trail</li>
+    <li>Improve my explanation skills</li>
+    <li>Pass my Terraform associate certification</li>
+  </ul>
+</div>
+
+</body>
+</html>
